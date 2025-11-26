@@ -1,0 +1,332 @@
+:root {
+  --padding-sides: 15vw;
+  --gap-between-blocks: 5vh;
+  --text-color: #ffffff;
+  --btn-bg-color: #ffffff;
+  --btn-text-color: #000000;
+}
+
+@font-face {
+  font-family: "DRUZHOK";
+  src: url("/Font/DRUZOK.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Hover-эффекты для кнопок */
+.hero-button:hover,
+.form-button:hover,
+.subscribe-button:hover {
+  background-color: #521917; /* Темный фон */
+  color: #ffffff; /* Белый текст */
+  transform: scale(1.05); /* увеличение */
+  transition: all 0.3s ease; /* Плавный переход */
+  text-decoration: none; /* Убирает подчеркивание */
+}
+
+/* Hover-эффекты для заголовков меню */
+.menu-item:hover {
+  color: #521917; /* Темный цвет текста */
+  transform: scale(1.05); /* увеличение */
+  transition: all 0.3s ease; /* Плавный переход цвета*/
+  text-decoration: none; /* Убирает подчеркивание */
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+}
+
+p {
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+}
+
+.brand {
+  font-family: "DRUZHOK", serif;
+  text-decoration: none; /* Убирает подчеркивание */
+  color: black;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.brand:hover {
+  color: #521917; /* Темный цвет текста */
+  transition: all 0.3s ease; /* Плавный переход */
+  transform: scale(1.1); /* Увеличение текста */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Тень для текста */
+  cursor: pointer; /* курсор */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Playfair Display", serif;
+}
+
+header {
+  padding: 0 var(--padding-sides);
+  text-align: center;
+  margin-bottom: var(--gap-between-blocks);
+}
+
+.logo img {
+  max-height: 4.75rem;
+}
+
+.menu-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  margin-top: 0rem;
+}
+
+.menu-item {
+  color: #521917; /* Темный цвет текста */
+  transition: all 0.3s ease; /* Плавный переход */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Тень для текста */
+  cursor: pointer; /* курсор */
+}
+
+.hero-section {
+  display: grid;
+  place-items: center;
+  height: 30rem;
+  background-image: url("/Image/фон.jpeg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+}
+
+.hero-content h2 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  margin: 1rem 0;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 1rem auto;
+}
+
+.hero-button {
+  margin-top: 20px;
+  background-color: var(--btn-bg-color);
+  color: var(--btn-text-color);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none; /* Убирает подчеркивание текста при наведении */
+}
+
+.workshops {
+  padding: 2rem var(--padding-sides);
+}
+
+.workshops h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.workshop-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.workshop-block-1 {
+  background-color: #e1ddd6;
+  padding: 1rem;
+  border: 1px solid #ddd;
+}
+
+.workshop-block-2 {
+  background-color: #521917;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  color: white;
+}
+
+.gallery-section {
+  padding: 2rem var(--padding-sides);
+  text-align: center;
+}
+
+.gallery-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.gallery-images {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.gallery-images img {
+  width: 25rem;
+  height: 25rem;
+  object-fit: cover;
+  border: 0.1rem solid #ddd;
+}
+
+.registration-block {
+  margin: 2rem auto;
+  max-width: 900px;
+  height: 500px;
+  background-color: #e1ddd6;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.registration-block p {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.form-button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: #521917;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.footer-section {
+  max-width: 63.5vw; /* Максимальная ширина футера */
+  height: 17rem; /* Высота футера */
+  background-color: #521917;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem; /* Боковые отступы */
+  margin: 0rem auto 0; /* Отступ сверху и центрирование */
+}
+
+/* Левая часть футера */
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Отступ между элементами */
+}
+
+.footer-left p {
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.5;
+  margin: 0;
+}
+
+.social-icons {
+  display: flex;
+  gap: 0.625rem; /* 10px */
+}
+
+.social-icons img {
+  width: 2.125rem; /* 34px */
+  height: 2.125rem;
+}
+
+/* Центр футера */
+.footer-center {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem; /* 10px */
+  text-align: center;
+}
+
+.footer-logo {
+  width: 3.125rem; /* 50px */
+}
+
+.footer-title {
+  font-family: "DRUZHOK", serif;
+  font-size: 2rem; /* 32px */
+}
+
+/* Правая часть футера */
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem; /* Отступ между элементами */
+}
+
+.subscribe-form {
+  display: flex;
+}
+
+.email-input {
+  width: 10.5rem; /* 168px */
+  height: 2.75rem; /* 44px */
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  font-size: 1rem; /* 16px */
+  padding: 0 0.625rem; /* 10px */
+  box-sizing: border-box;
+}
+
+.email-input::placeholder {
+  color: #ffffff;
+}
+
+.subscribe-button {
+  width: 6.6875rem; /* 107px */
+  height: 2.75rem;
+  background-color: white;
+  color: black;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}

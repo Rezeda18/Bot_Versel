@@ -1,0 +1,371 @@
+:root {
+  --padding-sides: 15vw; /* Отступы по бокам для элементов */
+  --gap-between-blocks: 5vh; /* Отступ между блоками по вертикали */
+  --text-color: #ffffff;
+  --btn-bg-color: #ffffff;
+  --btn-text-color: #000000;
+}
+
+@font-face {
+  font-family: "DRUZHOK";
+  src: url("/Font/DRUZOK.otf") format("opentype"); /* Fixed font path to use absolute path from public folder */
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Применяем box-sizing ко всем элементам */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Playfair Display", serif;
+}
+
+/* Основной контейнер */
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Блоки будут переноситься на новую строку */
+  justify-content: space-between;
+  gap: 20px;
+  padding: 2rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Каждый блок */
+.block {
+  background-color: #e1ddd6;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1 1 300px; /* Это позволяет блокам сжиматься, но не меньше чем 300px */
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Поля формы */
+.form-control,
+.form-select {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Радиокнопки внутри блока */
+.radio-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Кнопка оплаты */
+.pay-button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  background-color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.hero-button:hover,
+.form-button:hover,
+.subscribe-button:hover,
+.pay-button:hover {
+  background-color: #521917;
+  color: #ffffff;
+  transform: scale(1.05); /* Увеличение размера кнопки */
+  transition: all 0.3s ease; /* Плавный переход для всех изменений */
+}
+
+/* Плавный переход для текста при наведении */
+.menu-item:hover {
+  color: #521917;
+  transition: all 0.3s ease;
+  transform: scale(1.1);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Тень текста */
+  cursor: pointer;
+}
+
+.brand {
+  font-family: "DRUZHOK", serif;
+  font-size: 2rem;
+  font-weight: 600;
+  text-decoration: none; /* Убираем подчеркивание текста */
+  color: black;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 10%;
+  }
+
+  .block {
+    width: 100%;
+    padding: 4%;
+  }
+
+  .form-control,
+  .form-select {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .pay-button {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .block {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .form-control,
+  .form-select {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+
+  .pay-button {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+}
+
+.menu-item {
+  cursor: pointer;
+  text-decoration: none; /* Убираем подчеркивание текста */
+  color: inherit;
+}
+
+.menu-item:hover {
+  color: #521917;
+  transition: all 0.3s ease; /* Плавность изменения цвета */
+  transform: scale(1.1); /* Увеличение при наведении */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* тень текста */
+  cursor: pointer;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Playfair Display", serif;
+}
+
+header {
+  padding: 0 var(--padding-sides); /* Горизонтальные отступы из переменной */
+  text-align: center;
+  margin-bottom: var(--gap-between-blocks); /* Отступ снизу из переменной */
+}
+
+.logo img {
+  max-height: 4.75rem; /* Ограничение высоты */
+}
+
+.menu-row {
+  display: flex;
+  justify-content: center; /* Центрируем элементы */
+  align-items: center;
+  gap: 2.5rem;
+  margin-top: 0rem;
+}
+
+.menu-item {
+  font-size: 1rem;
+}
+
+.brand {
+  font-family: "DRUZHOK", serif;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* адаптация меню на мобильных устройствах */
+@media (max-width: 768px) {
+  .menu-row {
+    flex-direction: column; /* Меню выстраивается в столбик */
+    gap: 1.5rem;
+  }
+
+  .menu-item {
+    font-size: 1.2rem;
+  }
+
+  .logo img {
+    max-height: 3.5rem;
+  }
+
+  header {
+    padding: 0 5%;
+  }
+}
+
+.footer-section {
+  height: 17rem;
+  background-color: #521917;
+  color: white;
+  display: flex;
+  justify-content: space-between; /* Расстояние между блоками */
+  align-items: center;
+  padding: 0 15rem;
+  margin: 2.5rem auto 0;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column; /* Элементы выравниваем сверху вниз */
+  gap: 1rem;
+}
+
+.footer-left p {
+  font-size: 1.125rem;
+  line-height: 1.5; /* Межстрочный интервал */
+  margin: 0;
+}
+
+.social-icons {
+  display: flex; /* Элементы расположены в строку */
+  gap: 0.625rem;
+}
+
+.social-icons img {
+  width: 2.125rem;
+  height: 2.125rem;
+}
+
+.footer-center {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  text-align: center;
+}
+
+.footer-logo {
+  width: 3.125rem;
+}
+
+.footer-title {
+  font-family: "DRUZHOK", serif;
+  font-size: 2rem;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.subscribe-form {
+  display: flex;
+}
+
+.email-input {
+  width: 10.5rem;
+  height: 2.7rem;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  font-size: 1.1rem;
+  padding: 0 0.625rem;
+  box-sizing: border-box;
+}
+
+.email-input::placeholder {
+  color: #ffffff;
+}
+
+.subscribe-button {
+  width: 6.7rem;
+  height: 2.75rem;
+  background-color: white;
+  color: black;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.subscribe-button:hover {
+  background-color: #521917;
+  color: white;
+}
+
+/* адаптация футера */
+@media (max-width: 768px) {
+  .footer-section {
+    flex-direction: column; /* Меняем расположение футера на вертикальное */
+    height: auto;
+    padding: 2rem;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .footer-left {
+    gap: 0.75rem;
+  }
+
+  .footer-title {
+    font-size: 1.5rem;
+  }
+
+  .footer-logo {
+    width: 2.5rem;
+  }
+
+  .social-icons {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .email-input {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .subscribe-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-title {
+    font-size: 1.25rem;
+  }
+
+  .footer-logo {
+    width: 2rem;
+  }
+
+  .footer-left p {
+    font-size: 1rem;
+  }
+
+  .subscribe-button {
+    font-size: 0.9rem;
+  }
+}
